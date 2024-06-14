@@ -13,7 +13,8 @@ namespace PracticarRogusApi.Controllers
         {
             try
             {
-                return Ok("response");
+                var result = DataAccess.requestLinq(id);
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -26,7 +27,8 @@ namespace PracticarRogusApi.Controllers
         {
             try
             {
-                return Ok("response");
+                var result = DataAccess.requestSqlCommand(id);
+                return Ok(result);
             }
             catch (Exception ex)
             {

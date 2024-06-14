@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticarRogusApi", "PracticarRogusApi\PracticarRogusApi.csproj", "{FB03D6DD-F9CB-4E70-98CB-74A3B376DFF2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{A466FA4A-84E5-4FF8-99AA-B79558E4A33B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticarRogusApi", "PracticarRogusApi\PracticarRogusApi.csproj", "{FB03D6DD-F9CB-4E70-98CB-74A3B376DFF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{FB03D6DD-F9CB-4E70-98CB-74A3B376DFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB03D6DD-F9CB-4E70-98CB-74A3B376DFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB03D6DD-F9CB-4E70-98CB-74A3B376DFF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A466FA4A-84E5-4FF8-99AA-B79558E4A33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A466FA4A-84E5-4FF8-99AA-B79558E4A33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A466FA4A-84E5-4FF8-99AA-B79558E4A33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A466FA4A-84E5-4FF8-99AA-B79558E4A33B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
