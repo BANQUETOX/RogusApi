@@ -1,6 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 namespace PracticarRogusApi
 
 {
@@ -8,14 +10,18 @@ namespace PracticarRogusApi
     {
         
         private readonly string _connectionString;
-        public DataAccess(string connectionString) {
+        private readonly ApplicationDbContext _context;
+        public DataAccess(string connectionString, ApplicationDbContext context) {
             _connectionString = connectionString;
+            _context = context;
         }
         
        /* private string connectionString = lol.GetValue<string>("ConnectionStrings:Main") ;*/
-        public  Person requestLinq(string id)
+        public async Task<Person> requestLinq(string id)
         {
-            return new Person();
+            var person = await _context.Person.FromSqlRaw("EXECUTE dbo.ObtenerPersonaFelipeMena @cedula = {0} ",id).ToListAsync();
+            Console.WriteLine(person);
+            return person[0];
         }
 
         public  List<Dictionary<string, object>> requestSqlCommand(string id)

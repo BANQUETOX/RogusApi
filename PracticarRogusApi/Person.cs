@@ -1,10 +1,16 @@
-﻿namespace PracticarRogusApi
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace PracticarRogusApi
 {
+    [Keyless]
     public class Person
     {
-        public string name { get; set; }
-        public string lastName { get; set; }
-        public string secondLastName { get; set; }
-        public DateOnly birthday { get; set; }
+        
+        public string nombre { get; set; }
+        public string apellido1 { get; set; }
+        public string apellido2 { get; set; }
+        public string fechaNacimiento { get; set; }
     }
 }
