@@ -1,19 +1,27 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
+using Microsoft.Extensions.Configuration;
 namespace PracticarRogusApi
+
 {
     public class DataAccess
     {
-        /*Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;*/
-        /*"Data Source=201.237.248.149,1433;Initial Catalog=PracticaUtilidades;User ID=pruebas2016;Password=pruebas2016; Trusted_Connection=True;"*/
-        private static string connectionString = "Server=201.237.248.149,1433;Database=PracticaUtilidades;User ID=pruebas2016;Password=pruebas2016;TrustServerCertificate=true;";
-        public static Person requestLinq(string id)
+        
+        private readonly string _connectionString;
+        public DataAccess(string connectionString) {
+            _connectionString = connectionString;
+        }
+        
+       /* private string connectionString = lol.GetValue<string>("ConnectionStrings:Main") ;*/
+        public  Person requestLinq(string id)
         {
             return new Person();
         }
 
-        public static List<Dictionary<string, object>> requestSqlCommand(string id)
+        public  List<Dictionary<string, object>> requestSqlCommand(string id)
         {
+            var connectionString = _connectionString ;
+            Console.WriteLine(connectionString);
             List<Dictionary<string, object>> lstResults = new List<Dictionary<string, object>>();
             SqlConnection connection = new SqlConnection(connectionString);
             SqlParameter parameter = new SqlParameter("@cedula",id);

@@ -7,13 +7,20 @@ namespace PracticarRogusApi.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
+        private readonly string _connectionString;
+        DataAccess dataAccess;
 
+        public PersonController(IConfiguration configuration)
+        {
+            _connectionString = configuration["ConnectionStrings:Main"];
+            dataAccess =  new DataAccess(_connectionString);
+        }
         [HttpGet]
         public ActionResult GetPersonDataLinq(string id)
         {
             try
             {
-                var result = DataAccess.requestLinq(id);
+                var result = dataAccess.requestLinq(id);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -27,7 +34,7 @@ namespace PracticarRogusApi.Controllers
         {
             try
             {
-                var result = DataAccess.requestSqlCommand(id);
+                var result = dataAccess.requestSqlCommand(id);
                 return Ok(result);
             }
             catch (Exception ex)
